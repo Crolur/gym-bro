@@ -1,14 +1,26 @@
 <template>
-  <the-input></the-input>
+  a
+  <the-form>
+    <the-input
+    id="input-id"
+    label="labelka"
+    type="text"
+    />
+    <the-input
+    id="input-id"
+    label="labelka"
+    type="text"
+    />
+    <the-input
+    id="input-id"
+    label="labelka"
+    type="text"
+    />
+  </the-form>
 </template>
 
 <script>
-import TheInput from './components/UI/TheInput.vue'
-export default {
-  components: {
-    TheInput
-  }
-}
+
 
 </script>
 
