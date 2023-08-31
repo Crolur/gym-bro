@@ -2,13 +2,15 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import './index.css';
 
-import TheForm from "./components/UI/TheForm.vue";
-import TheInput from "./components/UI/TheInput.vue";
+import BaseForm from "./components/UI/BaseForm.vue";
+import BaseInput from "./components/UI/BaseInput.vue";
+import BaseButton from "./components/UI/BaseButton.vue";
 
 
 const app = createApp(App);
 
-app.component('the-form', TheForm);
-app.component('the-input', TheInput);
+app.component('base-form', BaseForm);
+app.component('base-input', BaseInput);
+app.component('base-button', BaseButton);
 
 app.mount('#app');
