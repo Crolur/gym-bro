@@ -1,6 +1,5 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import './index.css';
 
 import BaseForm from "./components/UI/BaseForm.vue";
 import BaseInput from "./components/UI/BaseInput.vue";
