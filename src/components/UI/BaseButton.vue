@@ -1,8 +1,7 @@
 <template>
 	<button
 		:type="type"
-		class="inline-block rounded border border-indigo-600 px-6 py-3 text-sm  focus:ring focus:outline-none font-bold w-fit"
-		:class="classes"
+		
 		>
 
 		{{ caption }}

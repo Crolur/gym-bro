@@ -1,11 +1,11 @@
 <template>
-    <form class="flex flex-col gap-y-5 max-w-md items-center border-2 rounded-lg pb-4">
-        <p class="border-b-2 text-center font-bold w-full py-4 text-xl">{{ title }}</p>
-        <div class="flex flex-col gap-y-5 w-80">
+    <form>
+        <p class="title">{{ title }}</p>
+        <div class="inputs">
             <slot name="inputs">
             </slot>
         </div>
-        <div class="flex flex-wrap gap-4 w-80">
+        <div class="controls">
             <slot name="controls">
             </slot>
         </div>
@@ -18,3 +18,28 @@ export default {
 
 };
 </script>
+
+<style scoped>
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+
+.title {
+    font-weight: bold;
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+</style>
