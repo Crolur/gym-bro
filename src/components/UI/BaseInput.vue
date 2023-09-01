@@ -25,6 +25,12 @@ label {
 input {
 	border-radius: 4px;
 	padding: 0 8px;
+	border: 2px solid #8e8e8e;
+	outline: none;
+}
+
+input:focus {
+	border-color: black;
 }
 
 input::-webkit-outer-spin-button,
@@ -33,6 +39,7 @@ input::-webkit-inner-spin-button {
 	margin: 0;
 }
 input[type="number"] {
+	appearance:textfield;
 	-moz-appearance: textfield;
 }
 </style>

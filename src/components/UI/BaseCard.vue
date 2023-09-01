@@ -19,6 +19,7 @@ export default {
     justify-content: center;
     align-content: center;
     padding: 1rem;
+    background-color: white;
 }
 
 @media (min-width: 700px) {

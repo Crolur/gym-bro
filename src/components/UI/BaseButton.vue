@@ -39,7 +39,7 @@ button:hover {
 }
 
 .empty:hover {
-	background: black;
+	background: #8e8e8e;
 	color: white;
 }
 
