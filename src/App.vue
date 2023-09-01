@@ -23,17 +23,9 @@
 					caption="Dodaj"
 					look="base" />
 				<base-button
-					type="submit"
-					caption="Dodaj"
-					look="border" />
-				<base-button
-					type="submit"
-					caption="Dodaj"
-					look="border" />
-				<base-button
-					type="submit"
-					caption="Dodaj"
-					look="border" />
+					caption="Anuluj"
+					look="empty" />
+
 			</template>
 		</base-form>
 	</base-card>

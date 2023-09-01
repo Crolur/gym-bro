@@ -41,5 +41,6 @@ form {
     gap: 8px;
     flex-wrap: wrap;
     width: 100%;
+    justify-content: space-between;
 }
 </style>

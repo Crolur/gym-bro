@@ -13,7 +13,7 @@ export default {
 <style scoped>
 .card {
     border: 1px solid black;
-    border-radius: 16px;
+    border-radius: 4px;
     max-width:320px;
     display: flex;
     justify-content: center;
@@ -21,7 +21,7 @@ export default {
     padding: 1rem;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 700px) {
     .card{
         max-width: 500px;
     }

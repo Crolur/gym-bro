@@ -1,7 +1,7 @@
 <template>
 	<button
 		:type="type"
-		
+		:class="look"
 		>
 
 		{{ caption }}
@@ -13,18 +13,34 @@
 export default {
 	props: ["type", "caption", "look"],
 
-	computed: {
-		classes() {
-			if(this.look === 'base') {
-				return 'bg-indigo-600 text-white hover:bg-transparent hover:text-indigo-600 active:text-indigo-500'
-			}
 
-			if(this.look === 'border') {
-				return ' text-indigo-600 hover:bg-indigo-600 hover:text-white active:bg-indigo-500'
-			}
-
-			return ''
-		}
-	}
 };
 </script>
+
+<style scoped>
+button {
+	width: fit-content;
+	padding: .5rem 1rem;
+	border: 2px solid black;
+	background: black;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+button:hover {
+	background: white;
+	color: black;
+}
+
+.empty {
+	background: white;
+	color: black;
+}
+
+.empty:hover {
+	background: black;
+	color: white;
+}
+
+</style>
