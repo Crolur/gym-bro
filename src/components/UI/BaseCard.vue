@@ -30,7 +30,6 @@ export default {
 
     methods: {
         removeCard(){
-            console.log(this.id);
             this.$emit('removeCard', this.id)
             
         }

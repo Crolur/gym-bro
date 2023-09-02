@@ -7,8 +7,8 @@
         removable="true"
         v-for="weight in userWeightData"
         :key="weight"
-        :id="weight.date"
-        @removeCard="console.log()"
+        :id="weight.id"
+        @removeCard="removeCard"
         >
         <p class="weight-value">{{ weight.value }}</p>
         <p class="weight-date">{{ weight.date }}</p>
@@ -20,6 +20,14 @@
 <script>
 export default {
     props: ['userWeightData'],
+
+    methods: {
+        removeCard(id) {
+            this.$emit('removeCard', id, 'userWeights')
+        }
+    },
+
+    emits: ['removeCard']
 }
 </script>
 
