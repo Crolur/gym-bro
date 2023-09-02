@@ -26,11 +26,12 @@
 
 <script>
 export default {
-	props: ["id", "bgColor", "removable"],
+	props: ["id", "bgColor", "removable", "parentId"],
+
 
     methods: {
         removeCard(){
-            this.$emit('removeCard', this.id)
+            this.$emit('removeCard', this.id, this.parentId)
             
         }
     },
@@ -45,6 +46,7 @@ export default {
 	border: 1px solid black;
 	border-radius: 4px;
 	max-width: 320px;
+	min-height: 65px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

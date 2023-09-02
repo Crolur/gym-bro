@@ -3,43 +3,19 @@
 		:userWeightData="userData.userWeights"
 		@removeCard="removeCard" />
 
-	<!-- <base-card bgColor="#ccc">
-		<base-form title="Tytuł">
-			<template #inputs>
-				<base-input
-					id="nazwa"
-					label="Nazwa"
-					type="text" />
-				<base-input
-					id="data"
-					label="Data"
-					type="date" />
-				<base-input
-					id="waga"
-					label="Waga"
-					type="number"
-					placeholder="10" />
-			</template>
-			<template #controls>
-				<base-button
-					type="submit"
-					caption="Dodaj"
-					look="base" />
-				<base-button
-					caption="Anuluj"
-					look="empty" />
-
-			</template>
-		</base-form>
-	</base-card> -->
+	<user-exercises
+		@removeCard="removeCard"
+		:userExercisesData="userData.userExercises" />
 </template>
 
 <script>
 import userWeights from "./components/userWeights.vue";
+import userExercises from "./components/userExercises.vue";
 
 export default {
 	components: {
 		userWeights,
+		userExercises,
 	},
 
 	data() {
@@ -164,8 +140,8 @@ export default {
 	},
 
 	methods: {
-		removeCard(id, arr) {
-			let elementToRemove, indexOfElementToRemove;
+		removeCard(id, arr, parentId) {
+			let elementToRemove, indexOfElementToRemove, parentElement;
 			switch (arr) {
 				case "userWeights":
 					elementToRemove = this.userData.userWeights.find((element) => element.id === id);
@@ -182,10 +158,11 @@ export default {
 					break;
 
 				case "records":
-					elementToRemove = this.userData.userExercises.records.find((element) => element.id === id);
-					indexOfElementToRemove = this.userData.userExercises.records.indexOf(elementToRemove);
+					parentElement = this.userData.userExercises.find((element) => element.id === parentId)
+					elementToRemove = parentElement.records.find((element) => element.id === id);
+					indexOfElementToRemove = parentElement.records.indexOf(elementToRemove);
 
-					this.userData.userExercises.records.splice(indexOfElementToRemove, 1);
+					parentElement.records.splice(indexOfElementToRemove, 1);
 					break;
 
 				case "userTrainingPlans":
@@ -202,6 +179,7 @@ export default {
 					this.userData.userTrainingPlans.exercisesId.splice(indexOfElementToRemove, 1);
 					break;
 			}
+			console.log(this.userData)
 		},
 	},
 };
