@@ -2,6 +2,7 @@
 	<user-weights
 	:userWeightData="userData.userWeights"
 	/>
+	
 	<!-- <base-card bgColor="#ccc">
 		<base-form title="Tytuł">
 			<template #inputs>

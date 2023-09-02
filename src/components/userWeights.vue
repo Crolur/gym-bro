@@ -4,8 +4,11 @@
 
     <base-card-container>
         <base-card
+        removable="true"
         v-for="weight in userWeightData"
         :key="weight"
+        :id="weight.date"
+        @removeCard="console.log()"
         >
         <p class="weight-value">{{ weight.value }}</p>
         <p class="weight-date">{{ weight.date }}</p>
@@ -17,8 +20,6 @@
 <script>
 export default {
     props: ['userWeightData'],
-    
-
 }
 </script>
 
