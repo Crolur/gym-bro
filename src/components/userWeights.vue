@@ -3,6 +3,7 @@
 		<h2>Twoja waga</h2>
 
 		<base-card-container>
+        <base-button caption="Dodaj wagę" @click="addWeight"/>
 			<base-card
 				removable="true"
 				v-for="weight in userWeightData"
@@ -24,9 +25,13 @@ export default {
 		removeCard(id) {
 			this.$emit("removeCard", id, "userWeights");
 		},
+
+        addWeight() {
+            this.$emit("addWeight")
+        }
 	},
 
-	emits: ["removeCard"],
+	emits: ["removeCard", "addWeight"],
 };
 </script>
 

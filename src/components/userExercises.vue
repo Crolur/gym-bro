@@ -6,28 +6,28 @@
 			removable="true"
 			v-for="exercise in userExercisesData"
 			:key="exercise.id"
-            :id="exercise.id"
-            >
-			<p>{{ exercise.name }}</p>
-			<base-card-container>
-				<base-card
-					@removeCard="removeRecordCard"
-					removable="true"
-					v-for="record in exercise.records"
-					:key="record.id"
-                    :id="record.id"
-                    :parentId="exercise.id"
-                    >
-					{{ record.value }} kg
-				</base-card>
-			</base-card-container>
-		</base-card>
+			:id="exercise.id">
+				<p>{{ exercise.name }}</p>
+				<base-card-container>
+                <base-button caption="Dodaj wartość" />
+					<base-card
+						@removeCard="removeRecordCard"
+						removable="true"
+						v-for="record in exercise.records"
+						:key="record.id"
+						:id="record.id"
+						:parentId="exercise.id">
+						{{ record.value }} kg
+					</base-card>
+				</base-card-container>
+            </base-card>
+            <base-button caption="Dodaj ćwiczenie" />
 	</base-card>
 </template>
 
 <script>
 export default {
-	props: ["userExercisesData"],
+	props: ["userExercisesData", "userTrainingPlans"],
 
 	methods: {
 		removeExerciseCard(id) {
@@ -37,6 +37,7 @@ export default {
 		removeRecordCard(id, parentId) {
 			this.$emit("removeCard", id, "records", parentId);
 		},
+
 	},
 };
 </script>

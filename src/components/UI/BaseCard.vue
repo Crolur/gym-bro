@@ -46,7 +46,9 @@ export default {
 	border: 1px solid black;
 	border-radius: 4px;
 	max-width: 320px;
+	min-width: 80px;
 	min-height: 65px;
+	width: 99%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

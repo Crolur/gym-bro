@@ -1,11 +1,14 @@
 <template>
 	<user-weights
 		:userWeightData="userData.userWeights"
-		@removeCard="removeCard" />
+		@removeCard="removeCard"
+		@addWeight="addWeight"
+		/>
 
 	<user-exercises
 		@removeCard="removeCard"
-		:userExercisesData="userData.userExercises" />
+		:userExercisesData="userData.userExercises"
+		:userTrainingPlans="userData.userTrainingPlans" />
 </template>
 
 <script>
@@ -140,6 +143,17 @@ export default {
 	},
 
 	methods: {
+		addWeight() {
+			const currentDate = new Date().toJSON().slice(0,10).split('-').reverse().join('-');
+			const idFromtimestamp = new Date().getTime().toString();
+
+			this.userData.userWeights.unshift({
+				date: currentDate,
+				value: 80,
+				id: idFromtimestamp,
+			});
+		},
+
 		removeCard(id, arr, parentId) {
 			let elementToRemove, indexOfElementToRemove, parentElement;
 			switch (arr) {
@@ -158,7 +172,7 @@ export default {
 					break;
 
 				case "records":
-					parentElement = this.userData.userExercises.find((element) => element.id === parentId)
+					parentElement = this.userData.userExercises.find((element) => element.id === parentId);
 					elementToRemove = parentElement.records.find((element) => element.id === id);
 					indexOfElementToRemove = parentElement.records.indexOf(elementToRemove);
 
@@ -179,7 +193,6 @@ export default {
 					this.userData.userTrainingPlans.exercisesId.splice(indexOfElementToRemove, 1);
 					break;
 			}
-			console.log(this.userData)
 		},
 	},
 };
@@ -199,5 +212,12 @@ export default {
 body * {
 	font-family: "Changa", sans-serif;
 	line-height: 1rem;
+}
+
+#app {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 40px;
 }
 </style>
