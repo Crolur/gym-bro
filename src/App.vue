@@ -15,6 +15,17 @@
 import userWeights from "./components/userWeights.vue";
 import userExercises from "./components/userExercises.vue";
 
+const getDate = () => {
+	const currentDate = new Date().toJSON().slice(0,10).split('-').reverse().join('-');
+	const idFromTimestamp = new Date().getTime().toString();
+
+	return {
+		currentDate,
+		idFromTimestamp
+	}
+
+}
+
 export default {
 	components: {
 		userWeights,
@@ -144,14 +155,13 @@ export default {
 
 	methods: {
 		addWeight() {
-			const currentDate = new Date().toJSON().slice(0,10).split('-').reverse().join('-');
-			const idFromtimestamp = new Date().getTime().toString();
-
 			this.userData.userWeights.unshift({
-				date: currentDate,
-				value: 80,
-				id: idFromtimestamp,
+				date: getDate().currentDate,
+				value: 83,
+				id: getDate().idFromTimestamp,
 			});
+
+			console.log(this.userData)
 		},
 
 		removeCard(id, arr, parentId) {

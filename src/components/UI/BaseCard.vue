@@ -46,7 +46,7 @@ export default {
 	border: 1px solid black;
 	border-radius: 4px;
 	max-width: 320px;
-	min-width: 80px;
+	min-width: 85px;
 	min-height: 65px;
 	width: 99%;
 	display: flex;
@@ -59,8 +59,8 @@ export default {
 }
 .remove {
 	position: absolute;
-	top: 5px;
-	right: 5px;
+	top: 2px;
+	right: 2px;
 	color: #8e8e8e;
 	cursor: pointer;
 }

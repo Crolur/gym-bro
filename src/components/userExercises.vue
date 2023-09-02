@@ -9,7 +9,7 @@
 			:id="exercise.id">
 				<p>{{ exercise.name }}</p>
 				<base-card-container>
-                <base-button caption="Dodaj wartość" />
+                <base-button caption="Dodaj wartość" look="empty"/>
 					<base-card
 						@removeCard="removeRecordCard"
 						removable="true"
@@ -17,11 +17,11 @@
 						:key="record.id"
 						:id="record.id"
 						:parentId="exercise.id">
-						{{ record.value }} kg
+						<p class="record">{{ record.value }}&nbsp;kg</p>
 					</base-card>
 				</base-card-container>
             </base-card>
-            <base-button caption="Dodaj ćwiczenie" />
+            <base-button caption="Dodaj ćwiczenie" look="empty"/>
 	</base-card>
 </template>
 
@@ -41,3 +41,10 @@ export default {
 	},
 };
 </script>
+
+<style>
+.record {
+    font-weight: 700;
+    font-size: 18px;
+}
+</style>
