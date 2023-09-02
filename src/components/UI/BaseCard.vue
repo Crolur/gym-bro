@@ -16,8 +16,10 @@ export default {
     border-radius: 4px;
     max-width:320px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+    row-gap: 16px;
     padding: 1rem;
     background-color: white;
 }

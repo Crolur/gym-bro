@@ -1,0 +1,63 @@
+{
+	"userName": "Adam",
+	"userId": 0,
+	"userWeights": [
+		{
+			"date": "01-05-2023",
+			"value": 80
+		},
+		{
+			"date": "01-04-2023",
+			"value": 81
+		},
+		{
+			"date": "01-03-2023",
+			"value": 82
+		},
+		{
+			"date": "01-02-2023",
+			"value": 81
+		},
+		{
+			"date": "01-01-2023",
+			"value": 80
+		}
+	],
+	"userExercises": [
+		{
+			"id": 0,
+			"name": "Ćw1",
+			"records": [6, 5, 4, 3, 2, 1]
+		},
+		{
+			"id": 1,
+			"name": "Ćw2",
+			"records": [6, 5, 4, 3, 2, 1]
+		},
+		{
+			"id": 2,
+			"name": "Ćw3",
+			"records": [6, 5, 4, 3, 2, 1]
+		},
+		{
+			"id": 3,
+			"name": "Ćw4",
+			"records": [6, 5, 4, 3, 2, 1]
+		},
+		{
+			"id": 4,
+			"name": "Ćw5",
+			"records": [6, 5, 4, 3, 2, 1]
+		}
+	],
+	"userTrainingPlans": [
+		{
+			"name": "A",
+			"exercisesId": [0, 2, 4]
+		},
+		{
+			"name": "B",
+			"exercisesId": [1, 3]
+		}
+	]
+}

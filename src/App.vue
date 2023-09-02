@@ -1,6 +1,8 @@
 <template>
-	a
-	<base-card bgColor="#ccc">
+	<user-weights
+	:userWeightData="userData.userWeights"
+	/>
+	<!-- <base-card bgColor="#ccc">
 		<base-form title="Tytuł">
 			<template #inputs>
 				<base-input
@@ -28,14 +30,32 @@
 
 			</template>
 		</base-form>
-	</base-card>
+	</base-card> -->
 </template>
 
-<script></script>
+<script>
+import userDataJSON from "./assets/userData.json";
+import userWeights from "./components/userWeights.vue";
+
+export default {
+	components: {
+		userWeights,
+	},
+
+	data() {
+		return {
+			userData: userDataJSON,
+		};
+	},
+
+	created() {
+		console.log(this.userData);
+	},
+};
+</script>
 
 <style>
-
-	@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@200;400;700&display=swap");
 
 *,
 *::before,
@@ -46,7 +66,7 @@
 }
 
 body * {
-	font-family: 'Changa', sans-serif;
+	font-family: "Changa", sans-serif;
 	line-height: 1rem;
 }
 </style>
