@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import userWeights from "./components/userWeights.vue";
-import userExercises from "./components/userExercises.vue";
+import UserWeights from "./components/UserWeights.vue";
+import UserExercises from "./components/UserExercises.vue";
 
 const getDate = () => {
 	const currentDate = new Date().toJSON().slice(0,10).split('-').reverse().join('-');
@@ -28,8 +28,8 @@ const getDate = () => {
 
 export default {
 	components: {
-		userWeights,
-		userExercises,
+		UserWeights,
+		UserExercises,
 	},
 
 	data() {
