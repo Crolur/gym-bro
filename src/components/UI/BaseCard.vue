@@ -5,9 +5,8 @@
 		<div
 			class="remove"
 			v-if="removable"
-            @click="removeCard"
-            :id="id"
-            >
+			@click="removeCard"
+			:id="id">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="16"
@@ -28,15 +27,13 @@
 export default {
 	props: ["id", "bgColor", "removable", "parentId"],
 
+	methods: {
+		removeCard() {
+			this.$emit("removeCard", this.id, this.parentId);
+		},
+	},
 
-    methods: {
-        removeCard(){
-            this.$emit('removeCard', this.id, this.parentId)
-            
-        }
-    },
-
-    emits: ['removeCard']
+	emits: ["removeCard"],
 };
 </script>
 

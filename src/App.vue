@@ -154,14 +154,12 @@ export default {
 	},
 
 	methods: {
-		addWeight() {
+		addWeight(weightValue, dateValue) {
 			this.userData.userWeights.unshift({
-				date: getDate().currentDate,
-				value: 83,
+				date: dateValue,
+				value: weightValue,
 				id: getDate().idFromTimestamp,
 			});
-
-			console.log(this.userData)
 		},
 
 		removeCard(id, arr, parentId) {

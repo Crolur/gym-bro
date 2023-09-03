@@ -6,7 +6,9 @@
 			:id="id"
 			:placeholder="placeholder"
 			step="0.01"
-			min="0" />
+			min="0" 
+			ref="input"
+			/>
 	</label>
 </template>
 

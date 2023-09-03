@@ -1,9 +1,10 @@
 <template>
-	<base-card>
+	<add-weight-form v-if="addingWeight" @cancelAddingWeight="closeAddingWeight" @addWeight="addWeight" />
+	<base-card v-else>
 		<h2>Twoja waga</h2>
 
 		<base-card-container>
-        <base-button caption="Dodaj wagę" @click="addWeight" look="empty"/>
+        <base-button caption="Dodaj wagę" @click="openAddWeight" look="empty"/>
 			<base-card
 				removable="true"
 				v-for="weight in userWeightData"
@@ -18,17 +19,36 @@
 </template>
 
 <script>
+import AddWeightForm from './AddWeightForm.vue';
+
 export default {
+	components: {AddWeightForm},
+	
 	props: ["userWeightData"],
+
+	data() {
+		return {
+			addingWeight: false,
+		}
+	},
 
 	methods: {
 		removeCard(id) {
 			this.$emit("removeCard", id, "userWeights");
 		},
 
-        addWeight() {
-            this.$emit("addWeight")
-        }
+        openAddWeight() {
+            this.addingWeight = true;
+        },
+
+		closeAddingWeight() {
+			this.addingWeight = false;
+		},
+
+		addWeight(weightValue, dateValue) {
+			this.addingWeight = false;
+			this.$emit("addWeight", weightValue, dateValue)
+		}
 	},
 
 	emits: ["removeCard", "addWeight"],
